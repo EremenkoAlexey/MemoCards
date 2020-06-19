@@ -15,6 +15,7 @@
 		9BDC8A72249CCDAD0015BBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC8A70249CCDAD0015BBB9 /* LaunchScreen.storyboard */; };
 		9BDC8A7D249CCDAD0015BBB9 /* MemoCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A7C249CCDAD0015BBB9 /* MemoCardsTests.swift */; };
 		9BDC8A88249CCDAD0015BBB9 /* MemoCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */; };
+		9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A95249CEDB10015BBB9 /* RectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9BDC8A83249CCDAD0015BBB9 /* MemoCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCardsUITests.swift; sourceTree = "<group>"; };
 		9BDC8A89249CCDAD0015BBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BDC8A95249CEDB10015BBB9 /* RectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */,
 				9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */,
 				9BDC8A66249CCDA70015BBB9 /* ViewController.swift */,
+				9BDC8A95249CEDB10015BBB9 /* RectView.swift */,
 				9BDC8A6E249CCDAD0015BBB9 /* Assets.xcassets */,
 				9BDC8A70249CCDAD0015BBB9 /* LaunchScreen.storyboard */,
 				9BDC8A73249CCDAD0015BBB9 /* Info.plist */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */,
 				9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */,
 				9BDC8A6D249CCDA70015BBB9 /* MemoCards.xcdatamodeld in Sources */,
 				9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */,
