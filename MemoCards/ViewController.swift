@@ -25,10 +25,15 @@ class ViewController: UIViewController {
 
         // let NewRect = RectView()
         //self.view.(NewRect.renderer)
-        print(1)
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         
-        print(2)
+        let imgView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        imgView.backgroundColor = .green
+        self.view.addSubview(imgView)
+        
+
+        /*
+        // it works
+        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
         let img = renderer.image { ctx in
             ctx.cgContext.setFillColor(UIColor.red.cgColor)
             ctx.cgContext.setStrokeColor(UIColor.green.cgColor)
@@ -38,10 +43,8 @@ class ViewController: UIViewController {
             ctx.cgContext.addRect(rectangle)
             ctx.cgContext.drawPath(using: .fillStroke)
         }
-        var imgView = UIImageView(image: img)
-        print(3)
-        self.view.addSubview(imgView)
-        
+        self.view.addSubview(UIImageView(image: img))
+        */
     }
 
     @objc func buttonAction(sender: UIButton!) {
