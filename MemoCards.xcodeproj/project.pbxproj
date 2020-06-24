@@ -16,6 +16,7 @@
 		9BDC8A7D249CCDAD0015BBB9 /* MemoCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A7C249CCDAD0015BBB9 /* MemoCardsTests.swift */; };
 		9BDC8A88249CCDAD0015BBB9 /* MemoCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */; };
 		9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A95249CEDB10015BBB9 /* RectView.swift */; };
+		9BEA8199249D2C97006F6ED9 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCardsUITests.swift; sourceTree = "<group>"; };
 		9BDC8A89249CCDAD0015BBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BDC8A95249CEDB10015BBB9 /* RectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectView.swift; sourceTree = "<group>"; };
+		9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		9BDC8A56249CCDA60015BBB9 = {
 			isa = PBXGroup;
 			children = (
+				9BEA819A249D7C4A006F6ED9 /* bin */,
 				9BDC8A61249CCDA70015BBB9 /* MemoCards */,
 				9BDC8A7B249CCDAD0015BBB9 /* MemoCardsTests */,
 				9BDC8A86249CCDAD0015BBB9 /* MemoCardsUITests */,
@@ -129,6 +132,14 @@
 				9BDC8A89249CCDAD0015BBB9 /* Info.plist */,
 			);
 			path = MemoCardsUITests;
+			sourceTree = "<group>";
+		};
+		9BEA819A249D7C4A006F6ED9 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */,
+			);
+			path = bin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */,
 				9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */,
 				9BDC8A6D249CCDA70015BBB9 /* MemoCards.xcdatamodeld in Sources */,
+				9BEA8199249D2C97006F6ED9 /* UIImageViewX.swift in Sources */,
 				9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */,
 				9BDC8A65249CCDA70015BBB9 /* SceneDelegate.swift in Sources */,
 			);
