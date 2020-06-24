@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B89B72824A3C05C0066D751 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89B72724A3C05C0066D751 /* test.swift */; };
 		9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */; };
 		9BDC8A65249CCDA70015BBB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */; };
 		9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A66249CCDA70015BBB9 /* ViewController.swift */; };
@@ -15,7 +16,7 @@
 		9BDC8A72249CCDAD0015BBB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BDC8A70249CCDAD0015BBB9 /* LaunchScreen.storyboard */; };
 		9BDC8A7D249CCDAD0015BBB9 /* MemoCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A7C249CCDAD0015BBB9 /* MemoCardsTests.swift */; };
 		9BDC8A88249CCDAD0015BBB9 /* MemoCardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */; };
-		9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A95249CEDB10015BBB9 /* RectView.swift */; };
+		9BDC8A96249CEDB10015BBB9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A95249CEDB10015BBB9 /* CardView.swift */; };
 		9BEA8199249D2C97006F6ED9 /* UIImageViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B89B72724A3C05C0066D751 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		9BDC8A5F249CCDA70015BBB9 /* MemoCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		9BDC8A83249CCDAD0015BBB9 /* MemoCardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemoCardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC8A87249CCDAD0015BBB9 /* MemoCardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCardsUITests.swift; sourceTree = "<group>"; };
 		9BDC8A89249CCDAD0015BBB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9BDC8A95249CEDB10015BBB9 /* RectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectView.swift; sourceTree = "<group>"; };
+		9BDC8A95249CEDB10015BBB9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewX.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +109,7 @@
 				9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */,
 				9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */,
 				9BDC8A66249CCDA70015BBB9 /* ViewController.swift */,
-				9BDC8A95249CEDB10015BBB9 /* RectView.swift */,
+				9BDC8A95249CEDB10015BBB9 /* CardView.swift */,
 				9BDC8A6E249CCDAD0015BBB9 /* Assets.xcassets */,
 				9BDC8A70249CCDAD0015BBB9 /* LaunchScreen.storyboard */,
 				9BDC8A73249CCDAD0015BBB9 /* Info.plist */,
@@ -137,6 +139,7 @@
 		9BEA819A249D7C4A006F6ED9 /* bin */ = {
 			isa = PBXGroup;
 			children = (
+				9B89B72724A3C05C0066D751 /* test.swift */,
 				9BEA8198249D2C97006F6ED9 /* UIImageViewX.swift */,
 			);
 			path = bin;
@@ -272,12 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BDC8A96249CEDB10015BBB9 /* RectView.swift in Sources */,
+				9BDC8A96249CEDB10015BBB9 /* CardView.swift in Sources */,
 				9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */,
 				9BDC8A6D249CCDA70015BBB9 /* MemoCards.xcdatamodeld in Sources */,
 				9BEA8199249D2C97006F6ED9 /* UIImageViewX.swift in Sources */,
 				9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */,
 				9BDC8A65249CCDA70015BBB9 /* SceneDelegate.swift in Sources */,
+				9B89B72824A3C05C0066D751 /* test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7HZS245R8;
 				INFOPLIST_FILE = MemoCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,6 +465,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7HZS245R8;
 				INFOPLIST_FILE = MemoCards/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
