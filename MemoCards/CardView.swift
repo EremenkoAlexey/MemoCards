@@ -7,7 +7,7 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
     let image = UIView()
     //image.contentMode = .scaleAspectFit
     //image.clipsToBounds = true
-    image.backgroundColor = .blue
+    image.backgroundColor = .green
     //image.backgroundColor = UIColor(red: 0, green: CGFloat(100)/255, blue: 0, alpha: 1)
     
     image.layer.cornerRadius = 8
@@ -84,4 +84,3 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
     */
   }
 }
-

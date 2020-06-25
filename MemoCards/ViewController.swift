@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             )
 
             // 4
-            //tapGesture.delegate = self
+            tapGesture.delegate = self
             image.addGestureRecognizer(tapGesture)
         }
         
