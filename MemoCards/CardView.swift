@@ -24,10 +24,10 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
     super.init(frame: frame)
     //setupConstraints()
   }
-   //@objc
-    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
-        print("caught")
 
+    @objc public func dragCard(recognaizer: UIPanGestureRecognizer){
+        print("caught")
+/*
         switch recognaizer.state {
         case .began:
             print("began")
@@ -46,13 +46,14 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
             print("default")
             
         }
+ */
     }
     
     public func setupViews(view: UIView) {
         view.addSubview(self.imageView)
         setupConstraints(view: view)
-        //let rec = UIPanGestureRecognizer(target: self.imageView, action: #selector(dragCard))
-        //self.imageView.addGestureRecognizer(rec)
+//        let rec = UIPanGestureRecognizer(target: self.imageView, action: #selector(dragCard))
+//        view.addGestureRecognizer(rec)
 
 
  }

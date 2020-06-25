@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //private
         //let padding: CGFloat = 16
         
-        
+
         for _ in 1...10
         {
             let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -46,6 +46,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             // 4
             tapGesture.delegate = self
             image.addGestureRecognizer(tapGesture)
+            
         }
         
         /*
