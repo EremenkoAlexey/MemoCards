@@ -25,7 +25,7 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
     //setupConstraints()
   }
 
-    @objc public func dragCard(recognaizer: UIPanGestureRecognizer){
+    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
         print("caught")
 /*
         switch recognaizer.state {
@@ -52,24 +52,28 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
     public func setupViews(view: UIView) {
         view.addSubview(self.imageView)
         setupConstraints(view: view)
-//        let rec = UIPanGestureRecognizer(target: self.imageView, action: #selector(dragCard))
-//        view.addGestureRecognizer(rec)
-
-
- }
+        setupGestures()
+    }
    
   required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
   }
-//view: UIView,
+
+    private func setupGestures(){
+        let rec = UIPanGestureRecognizer(target: imageView, action: #selector(dragCard))
+        rec.delegate = self
+        imageView.addGestureRecognizer(rec)
+    }
 
     
     private func setupConstraints(view: UIView) {
+        //let randomInt = Int.random(in: 0..<50)
+
     NSLayoutConstraint.activate([
         imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
         imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         imageView.heightAnchor.constraint(equalToConstant: 150),
-        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50 + 1))
+        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50))
     ])
         
     /*

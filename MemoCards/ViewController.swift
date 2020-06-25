@@ -33,21 +33,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //let padding: CGFloat = 16
         
 
-        for _ in 1...10
-        {
+        //for _ in 1...1{
             let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
-            image.setupViews(view: self.view)
-            
-            let tapGesture = UIPanGestureRecognizer(
-                target: image,
-                action: #selector(CardView.dragCard)
-            )
-
-            // 4
-            tapGesture.delegate = self
-            image.addGestureRecognizer(tapGesture)
-            
-        }
+            image.setupViews(view: self.view)   
+        //}
         
         /*
                 for index in 1...10
