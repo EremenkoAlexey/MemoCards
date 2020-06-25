@@ -1,56 +1,55 @@
 import UIKit
 
-final class CardView: UIView, UIGestureRecognizerDelegate {
-  private let padding: CGFloat = 16
-  
-  private lazy var imageView: UIView = {
-    let image = UIView()
-    //image.contentMode = .scaleAspectFit
-    //image.clipsToBounds = true
-    image.backgroundColor = .green
+class CardView: UIView, UIGestureRecognizerDelegate {
+    
+
+    override init (frame : CGRect) {
+        super.init(frame : frame)
+        self.backgroundColor = .blue
+            // UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
+        self.layer.cornerRadius = 8
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.borderColor = UIColor.red.cgColor
+        self.layer.borderWidth = 2
+        
+        //self.contentMode = .scaleAspectFit
+        //self.clipsToBounds = true
+        //self.backgroundColor = .green
+
+        
+    }
+    
+    
     //image.backgroundColor = UIColor(red: 0, green: CGFloat(100)/255, blue: 0, alpha: 1)
     
-    image.layer.cornerRadius = 8
-    image.translatesAutoresizingMaskIntoConstraints = false
     
-    image.layer.borderColor = UIColor.red.cgColor
-    image.layer.borderWidth = 2
-    
-    return image
-  }()
+    //return image
+  //}()
   
-
-  public override init(frame: CGRect) {
-    super.init(frame: frame)
-    //setupConstraints()
-  }
-
     @objc func dragCard(recognaizer: UIPanGestureRecognizer){
-        print("caught")
-/*
+//        print("caught")
+
         switch recognaizer.state {
         case .began:
             print("began")
         case .changed:
             let translation = recognaizer.translation(in: self)
             
-            let newX = self.imageView.center.x + translation.x+30
-            let newY = self.imageView.center.y + translation.y
+            let newX = self.center.x + translation.x
+            let newY = self.center.y + translation.y
             
-            self.imageView.center = CGPoint(x: newX, y: newY)
+            self.center = CGPoint(x: newX, y: newY)
             recognaizer.setTranslation(CGPoint.zero, in: self)
         case .ended:
             print("ended")
             
         default:
             print("default")
-            
         }
- */
     }
     
     public func setupViews(view: UIView) {
-        view.addSubview(self.imageView)
+        view.addSubview(self)
         setupConstraints(view: view)
         setupGestures()
     }
@@ -60,9 +59,14 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
   }
 
     private func setupGestures(){
-        let rec = UIPanGestureRecognizer(target: imageView, action: #selector(dragCard))
+        print("test")
+        let rec = UIPanGestureRecognizer(target: self, action: #selector(dragCard))
+        self.addGestureRecognizer(rec)
+        //imageView.isUserInteractionEnabled = true
         rec.delegate = self
-        imageView.addGestureRecognizer(rec)
+
+        
+
     }
 
     
@@ -70,10 +74,10 @@ final class CardView: UIView, UIGestureRecognizerDelegate {
         //let randomInt = Int.random(in: 0..<50)
 
     NSLayoutConstraint.activate([
-        imageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-        imageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-        imageView.heightAnchor.constraint(equalToConstant: 150),
-        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50))
+        self.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+        self.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+        self.heightAnchor.constraint(equalToConstant: 150),
+        self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50))
     ])
         
     /*

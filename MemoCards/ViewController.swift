@@ -9,7 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-
+    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
+        print("GET THIS")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,9 +36,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         //let padding: CGFloat = 16
         
 
-        //for _ in 1...1{
+        for _ in 1...1{
             let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
-            image.setupViews(view: self.view)   
+            image.setupViews(view: self.view)
+        }
+
+        
+        
+//        let rec = UIGestureRecognizer(target: self, action: #selector(dragCard))
+//        cardGreen.setupViews(view: self.view)
+//        cardGreen.addGestureRecognizer(rec)
+//
+//
+//        let panRec = UIPanGestureRecognizer()
+//
+//        panRec.addTarget(self, action: Selector(("dragCard")))
+//        image.addGestureRecognizer(panRec)
+//        image.isUserInteractionEnabled = true
         //}
         
         /*
