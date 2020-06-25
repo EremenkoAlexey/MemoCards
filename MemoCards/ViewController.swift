@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +31,21 @@ class ViewController: UIViewController {
 
         //private
         //let padding: CGFloat = 16
-
+        
+        
         for _ in 1...10
         {
             let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
             image.setupViews(view: self.view)
-            // self.view.addSubview(image)
             
-            //image.setupConstraints(view: self.view)
+            let tapGesture = UIPanGestureRecognizer(
+                target: image,
+                action: #selector(CardView.dragCard)
+            )
+
+            // 4
+            //tapGesture.delegate = self
+            image.addGestureRecognizer(tapGesture)
         }
         
         /*
