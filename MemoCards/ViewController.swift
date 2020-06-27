@@ -19,9 +19,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         
         self.view.backgroundColor = .white
         
-        for _ in 1...1{
+        for index in 1...3{
             let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
-            image.setupViews(view: self.view)
+            image.setupViews(view: self.view, index: index)
         }        
     }
 }

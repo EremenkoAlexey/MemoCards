@@ -2,7 +2,8 @@ import UIKit
 
 class CardView: UIView, UIGestureRecognizerDelegate {
     
-
+    private var viewTopAnchor = NSLayoutYAxisAnchor()
+    
     override init (frame : CGRect) {
         super.init(frame : frame)
         self.backgroundColor = .blue
@@ -11,18 +12,16 @@ class CardView: UIView, UIGestureRecognizerDelegate {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.borderColor = UIColor.red.cgColor
         self.layer.borderWidth = 2
+        
     }
 
   
     @objc func dragCard(recognaizer: UIPanGestureRecognizer){
 
         guard recognaizer.state == .ended else {
-        print("not ended")
       return
-        print("ended")
         }
     guard let gestureView = recognaizer.view else {
-        print("gest")
       return
     }
     // 1
@@ -40,24 +39,31 @@ class CardView: UIView, UIGestureRecognizerDelegate {
     // 4
     //finalPoint.x = min(max(finalPoint.x, 0), self.bounds.width)
     //finalPoint.y = min(max(finalPoint.y, 0), self.bounds.height)
-    finalPoint.y = max(finalPoint.y, 0)
-
+    if velocity.y > 0.0 { // токаем вниз
+        // TODO: заменить на нижнюю границу
+        finalPoint.y = min(finalPoint.y, CGFloat(500+75))
+    }
+    else{ // толкаем вверх
+        // TODO: заменить на верхнюю границу
+        finalPoint.y = max(finalPoint.y, CGFloat(50+75))
+        }
     // 5
     UIView.animate(
       withDuration: Double(slideFactor * 2),
       delay: 0,
       // 6
-      options: .curveEaseOut,
+        options: .curveEaseInOut, //curveEaseOut,
       animations: {
         gestureView.center = finalPoint
         
     })
     }
     
-    public func setupViews(view: UIView) {
+    public func setupViews(view: UIView, index: Int) {
         view.addSubview(self)
-        setupConstraints(view: view)
+        setupConstraints(view: view, index: index)
         setupGestures()
+        //viewTopAnchor = view.safeAreaLayoutGuide.topAnchor
     }
    
   required init?(coder: NSCoder) {
@@ -65,20 +71,19 @@ class CardView: UIView, UIGestureRecognizerDelegate {
   }
 
     private func setupGestures(){
-        print("test")
         let rec = UIPanGestureRecognizer(target: self, action: #selector(dragCard))
         self.addGestureRecognizer(rec)
         rec.delegate = self
     }
 
     
-    private func setupConstraints(view: UIView) {
-
+    private func setupConstraints(view: UIView, index: Int) {
+        
     NSLayoutConstraint.activate([
         self.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
         self.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
         self.heightAnchor.constraint(equalToConstant: 150),
-        self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50))
+        self.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: CGFloat(50+(index-1)*25))
     ])
         
     /*
