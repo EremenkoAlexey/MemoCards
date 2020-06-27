@@ -9,27 +9,25 @@
 import UIKit
 
 class test: UIImageView {
-
-    /*
-
-
-     
-
-     // MARK: - View Configuration
-     extension CardView {
-       public func configureCard(with type: CardType) {
-         let model = CardModel.getCardDetails(for: type)
-         imageView.image = UIImage(named: model.imageName)
-         textLabel.text = model.characterName
-         backgroundColor = model.backgroundColor
-       }
-     
-     public convenience init(with type: CardType) {
-       self.init(frame: .zero)
-       configureCard(with: type)
+    // произвольное перетаскивание объекта
+     @objc func dragCard(recognaizer: UIPanGestureRecognizer){
+         switch recognaizer.state {
+         case .began:
+             print("began")
+         case .changed:
+             let translation = recognaizer.translation(in: self)
+             
+             let newX = self.center.x + translation.x
+             let newY = self.center.y + translation.y
+             
+             
+             self.center = CGPoint(x: newX, y: newY)
+             recognaizer.setTranslation(CGPoint.zero, in: self)
+         case .ended:
+             print("ended")
+             
+         default:
+             print("default")
+         }
      }
-
-
- */
-
 }

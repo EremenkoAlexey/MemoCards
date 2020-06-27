@@ -11,41 +11,47 @@ class CardView: UIView, UIGestureRecognizerDelegate {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.borderColor = UIColor.red.cgColor
         self.layer.borderWidth = 2
-        
-        //self.contentMode = .scaleAspectFit
-        //self.clipsToBounds = true
-        //self.backgroundColor = .green
-
-        
     }
-    
-    
-    //image.backgroundColor = UIColor(red: 0, green: CGFloat(100)/255, blue: 0, alpha: 1)
-    
-    
-    //return image
-  //}()
+
   
     @objc func dragCard(recognaizer: UIPanGestureRecognizer){
-//        print("caught")
 
-        switch recognaizer.state {
-        case .began:
-            print("began")
-        case .changed:
-            let translation = recognaizer.translation(in: self)
-            
-            let newX = self.center.x + translation.x
-            let newY = self.center.y + translation.y
-            
-            self.center = CGPoint(x: newX, y: newY)
-            recognaizer.setTranslation(CGPoint.zero, in: self)
-        case .ended:
-            print("ended")
-            
-        default:
-            print("default")
+        guard recognaizer.state == .ended else {
+        print("not ended")
+      return
+        print("ended")
         }
+    guard let gestureView = recognaizer.view else {
+        print("gest")
+      return
+    }
+    // 1
+    let velocity = recognaizer.velocity(in: self)
+    let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
+    let slideMultiplier = magnitude / 200
+
+    // 2
+    let slideFactor = 0.1 * slideMultiplier
+    // 3
+    var finalPoint = CGPoint(
+      x: gestureView.center.x, //+ (velocity.x * slideFactor),
+      y: gestureView.center.y + (velocity.y * slideFactor)
+    )
+    // 4
+    //finalPoint.x = min(max(finalPoint.x, 0), self.bounds.width)
+    //finalPoint.y = min(max(finalPoint.y, 0), self.bounds.height)
+    finalPoint.y = max(finalPoint.y, 0)
+
+    // 5
+    UIView.animate(
+      withDuration: Double(slideFactor * 2),
+      delay: 0,
+      // 6
+      options: .curveEaseOut,
+      animations: {
+        gestureView.center = finalPoint
+        
+    })
     }
     
     public func setupViews(view: UIView) {
@@ -62,16 +68,11 @@ class CardView: UIView, UIGestureRecognizerDelegate {
         print("test")
         let rec = UIPanGestureRecognizer(target: self, action: #selector(dragCard))
         self.addGestureRecognizer(rec)
-        //imageView.isUserInteractionEnabled = true
         rec.delegate = self
-
-        
-
     }
 
     
     private func setupConstraints(view: UIView) {
-        //let randomInt = Int.random(in: 0..<50)
 
     NSLayoutConstraint.activate([
         self.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
