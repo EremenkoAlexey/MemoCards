@@ -28,6 +28,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let collection = CollectionView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
 
         collection.setupView(view: self.view)
+        
+        print("w - \(view.bounds.width), h - \(view.bounds.height)")
 
         //swipeUp.direction = .up
 

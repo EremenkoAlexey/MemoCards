@@ -15,7 +15,7 @@ class CardView: UIView, UIGestureRecognizerDelegate {
         
     }
 
-     @objc func openCard(recognaizer: UIPanGestureRecognizer){
+     @objc func openCard(recognaizer: UITapGestureRecognizer){
         print("open card")
     }
 
@@ -66,7 +66,7 @@ class CardView: UIView, UIGestureRecognizerDelegate {
     public func setupViews(view: UIView, index: Int) {
         view.addSubview(self)
         setupConstraints(view: view, index: index)
-        //setupGestures()
+        setupGestures()
         //viewTopAnchor = view.safeAreaLayoutGuide.topAnchor
     }
    
