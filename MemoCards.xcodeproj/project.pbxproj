@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B89B72824A3C05C0066D751 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B89B72724A3C05C0066D751 /* test.swift */; };
+		9BB611EB24A80F2B0096E2A1 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB611EA24A80F2B0096E2A1 /* CollectionView.swift */; };
 		9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */; };
 		9BDC8A65249CCDA70015BBB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */; };
 		9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC8A66249CCDA70015BBB9 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		9B89B72724A3C05C0066D751 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
+		9BB611EA24A80F2B0096E2A1 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		9BDC8A5F249CCDA70015BBB9 /* MemoCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				9BDC8A62249CCDA70015BBB9 /* AppDelegate.swift */,
 				9BDC8A64249CCDA70015BBB9 /* SceneDelegate.swift */,
 				9BDC8A66249CCDA70015BBB9 /* ViewController.swift */,
+				9BB611EA24A80F2B0096E2A1 /* CollectionView.swift */,
 				9BDC8A95249CEDB10015BBB9 /* CardView.swift */,
 				9BDC8A6E249CCDAD0015BBB9 /* Assets.xcassets */,
 				9BDC8A70249CCDAD0015BBB9 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 			files = (
 				9BDC8A96249CEDB10015BBB9 /* CardView.swift in Sources */,
 				9BDC8A67249CCDA70015BBB9 /* ViewController.swift in Sources */,
+				9BB611EB24A80F2B0096E2A1 /* CollectionView.swift in Sources */,
 				9BDC8A6D249CCDA70015BBB9 /* MemoCards.xcdatamodeld in Sources */,
 				9BDC8A63249CCDA70015BBB9 /* AppDelegate.swift in Sources */,
 				9BDC8A65249CCDA70015BBB9 /* SceneDelegate.swift in Sources */,

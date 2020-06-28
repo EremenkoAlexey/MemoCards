@@ -9,20 +9,33 @@
 import UIKit
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
-        print("GET THIS")
-    }
+//
+//    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+//        print("ANY")
+//        if gesture.direction == UISwipeGestureRecognizer.Direction.right {
+//            print("Swipe Right")
+//        }
+//    }
+//
+
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         self.view.backgroundColor = .white
+
+        let collection = CollectionView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
+
+        collection.setupView(view: self.view)
+
+        //swipeUp.direction = .up
+
         
-        for index in 1...3{
-            let image = CardView(frame:CGRect(x: 0, y: 0, width: 0, height: 0))
-            image.setupViews(view: self.view, index: index)
-        }        
+        //let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        //swipeDown.direction = .down
+        //self.view.addGestureRecognizer(swipeDown)
+        
     }
 }
 

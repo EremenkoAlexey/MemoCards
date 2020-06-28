@@ -15,54 +15,58 @@ class CardView: UIView, UIGestureRecognizerDelegate {
         
     }
 
+     @objc func openCard(recognaizer: UIPanGestureRecognizer){
+        print("open card")
+    }
+
   
-    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
-
-        guard recognaizer.state == .ended else {
-      return
-        }
-    guard let gestureView = recognaizer.view else {
-      return
-    }
-    // 1
-    let velocity = recognaizer.velocity(in: self)
-    let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
-    let slideMultiplier = magnitude / 200
-
-    // 2
-    let slideFactor = 0.1 * slideMultiplier
-    // 3
-    var finalPoint = CGPoint(
-      x: gestureView.center.x, //+ (velocity.x * slideFactor),
-      y: gestureView.center.y + (velocity.y * slideFactor)
-    )
-    // 4
-    //finalPoint.x = min(max(finalPoint.x, 0), self.bounds.width)
-    //finalPoint.y = min(max(finalPoint.y, 0), self.bounds.height)
-    if velocity.y > 0.0 { // токаем вниз
-        // TODO: заменить на нижнюю границу
-        finalPoint.y = min(finalPoint.y, CGFloat(500+75))
-    }
-    else{ // толкаем вверх
-        // TODO: заменить на верхнюю границу
-        finalPoint.y = max(finalPoint.y, CGFloat(50+75))
-        }
-    // 5
-    UIView.animate(
-      withDuration: Double(slideFactor * 2),
-      delay: 0,
-      // 6
-        options: .curveEaseInOut, //curveEaseOut,
-      animations: {
-        gestureView.center = finalPoint
-        
-    })
-    }
+//    @objc func dragCard(recognaizer: UIPanGestureRecognizer){
+//
+//        guard recognaizer.state == .ended else {
+//      return
+//        }
+//    guard let gestureView = recognaizer.view else {
+//      return
+//    }
+//    // 1
+//    let velocity = recognaizer.velocity(in: self)
+//    let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
+//    let slideMultiplier = magnitude / 200
+//
+//    // 2
+//    let slideFactor = 0.1 * slideMultiplier
+//    // 3
+//    var finalPoint = CGPoint(
+//      x: gestureView.center.x, //+ (velocity.x * slideFactor),
+//      y: gestureView.center.y + (velocity.y * slideFactor)
+//    )
+//    // 4
+//    //finalPoint.x = min(max(finalPoint.x, 0), self.bounds.width)
+//    //finalPoint.y = min(max(finalPoint.y, 0), self.bounds.height)
+//    if velocity.y > 0.0 { // токаем вниз
+//        // TODO: заменить на нижнюю границу
+//        finalPoint.y = min(finalPoint.y, CGFloat(500+75))
+//    }
+//    else{ // толкаем вверх
+//        // TODO: заменить на верхнюю границу
+//        finalPoint.y = max(finalPoint.y, CGFloat(50+75))
+//        }
+//    // 5
+//    UIView.animate(
+//      withDuration: Double(slideFactor * 2),
+//      delay: 0,
+//      // 6
+//        options: .curveEaseInOut, //curveEaseOut,
+//      animations: {
+//        gestureView.center = finalPoint
+//        
+//    })
+//    }
     
     public func setupViews(view: UIView, index: Int) {
         view.addSubview(self)
         setupConstraints(view: view, index: index)
-        setupGestures()
+        //setupGestures()
         //viewTopAnchor = view.safeAreaLayoutGuide.topAnchor
     }
    
@@ -71,7 +75,7 @@ class CardView: UIView, UIGestureRecognizerDelegate {
   }
 
     private func setupGestures(){
-        let rec = UIPanGestureRecognizer(target: self, action: #selector(dragCard))
+        let rec = UITapGestureRecognizer(target: self, action: #selector(openCard))
         self.addGestureRecognizer(rec)
         rec.delegate = self
     }
